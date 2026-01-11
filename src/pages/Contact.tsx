@@ -17,21 +17,6 @@ const Contact = () => {
                   judedow@umich.edu
                 </a>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-                <a 
-                  href="tel:+19015002312" 
-                  className="text-accent hover:text-accent/80 transition-colors text-lg"
-                >
-                  (901) 500-2312
-                </a>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
-                <p className="text-gray-300 text-lg">
-                  405 S Main St, Ann Arbor, MI
-                </p>
-              </div>
             </div>
           </div>
         </div>

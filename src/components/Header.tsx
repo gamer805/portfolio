@@ -8,12 +8,6 @@ const Header = () => {
         <a href="mailto:judedow@umich.edu" className="hover:text-accent transition-colors">
           judedow@umich.edu
         </a>
-        <span className="text-gray-600">•</span>
-        <a href="tel:+19015002312" className="hover:text-accent transition-colors">
-          (901) 500-2312
-        </a>
-        <span className="text-gray-600">•</span>
-        <span>405 S Main St, Ann Arbor, MI</span>
       </div>
     </header>
   );
