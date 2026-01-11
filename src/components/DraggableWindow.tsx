@@ -16,7 +16,6 @@ const DraggableWindow = ({
   initialSize = { width: 800, height: 600 }
 }: DraggableWindowProps) => {
   const [position, setPosition] = useState(initialPosition)
-  const [size, setSize] = useState(initialSize)
   const [isDragging, setIsDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const windowRef = useRef<HTMLDivElement>(null)
@@ -71,8 +70,8 @@ const DraggableWindow = ({
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
-        width: `${size.width}px`,
-        height: `${size.height}px`,
+        width: `${initialSize.width}px`,
+        height: `${initialSize.height}px`,
         maxWidth: '90vw',
         maxHeight: '90vh',
       }}

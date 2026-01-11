@@ -5,8 +5,6 @@ import Skills from './Skills'
 import Activities from './Activities'
 import Games from './Games'
 import YouTubeVideos from './YouTubeVideos'
-import WorkExperience from './WorkExperience'
-import Projects from './Projects'
 
 export const AboutContent = () => {
   return (
