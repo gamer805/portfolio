@@ -7,7 +7,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/reawaken',
       slug: 'reawaken',
       imageUrl: 'https://img.itch.zone/aW1nLzM5MzkxNDIucG5n/315x250%23c/R%2FTqT8.png',
-      description: 'Reawaken is a Legend of Zelda-inspired action-adventure game I made in Unity for the UCLA Game Lab in 2020.'
+      description: 'A Legend of Zelda-inspired action-adventure game I made in Unity for the UCLA Game Lab in 2020.'
     },
     {
       id: 'tennis-wars',
@@ -16,7 +16,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/tennis-wars',
       slug: 'tennis-wars',
       imageUrl: 'https://img.itch.zone/aW1nLzc4MzM3NzYucG5n/315x250%23c/7DMd4%2B.png',
-      description: 'Tennis Wars is a 2D pong-like game I adapted from an older HTML5 game I made in middle school.'
+      description: 'A 2D pong-like game I adapted from an older HTML5 game I made in middle school.'
     },
     {
       id: 'slime-hunter',
@@ -25,7 +25,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/slime-hunter',
       slug: 'slime-hunter',
       imageUrl: 'https://img.itch.zone/aW1nLzc4MzM3MDQucG5n/315x250%23c/%2Fl3woO.png',
-      description: 'Slime Hunter is a top-down action game I made as my first foray into Unity3D.'
+      description: 'A top-down action game I made as my first foray into Unity3D.'
     },
     {
       id: 'furious-fowls',
@@ -34,7 +34,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/furious-fowls',
       slug: 'furious-fowls',
       imageUrl: 'https://img.itch.zone/aW1nLzE3NTk1MzYxLnBuZw==/315x250%23c/kMNl%2B5.png',
-      description: 'Furious Fowls is a demake of Angry Birds I made in 2021 for a game jam.'
+      description: 'A demake of Angry Birds I made in 2021 for a game jam.'
     },
     {
       id: 'bloobert',
@@ -43,7 +43,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/bloobert',
       slug: 'bloobert',
       imageUrl: 'https://img.itch.zone/aW1nLzc4OTE3MDYucG5n/315x250%23c/u3zhOT.png',
-      description: 'Bloobert is a 2D platformer I made in 2022 for Trijam #152.'
+      description: 'A 2D platformer I made in 2022 for Trijam #152.'
     },
     {
       id: 'duck-a-day',
@@ -52,7 +52,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/duck-a-day-in-the-life',
       slug: 'duck-a-day-in-the-life',
       imageUrl: 'https://img.itch.zone/aW1nLzkwMjkwNzAucG5n/315x250%23c/bL7mZS.png',
-      description: 'Duck: A Day In The Life is a mini-RPG I made in 2022 for the Bitsy Jam.'
+      description: 'A mini-RPG I made in 2022 for the Bitsy Jam.'
     },
     {
       id: 'magiblade',
@@ -61,7 +61,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/magiblade',
       slug: 'magiblade',
       imageUrl: 'https://img.itch.zone/aW1nLzEwNjIxNzkyLnBuZw==/315x250%23c/Ezz91a.png',
-      description: "MagiBlade is a 2D action platformer I started work on in 2022."
+      description: "A 2D action platformer I started work on in 2022."
     },
     {
       id: 'ghostly-melee',
@@ -70,7 +70,7 @@ const Games = () => {
       url: 'https://fancy-dog-games.itch.io/ghostly-melee',
       slug: 'ghostly-melee',
       imageUrl: 'https://img.itch.zone/aW1nLzg3NzY1OTgucG5n/315x250%23c/nGaCn%2F.png',
-      description: "Ghostly Melee is a 2D platformer I made in 2022 for the Weekly Game Jam - Week 250."
+      description: "A 2D platformer I made in 2022 for the Weekly Game Jam - Week 250."
     }
   ];
 
@@ -98,7 +98,8 @@ const Games = () => {
                 }}
               />
             </a>
-            <p>{game.description}</p>
+            <h1 className="text-lg font-bold text-accent mb-2">{game.title}</h1>
+            <p className="text-gray-300 text-sm">{game.description}</p>
           </div>
         ))}
       </div>

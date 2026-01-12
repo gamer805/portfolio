@@ -5,6 +5,7 @@ import Skills from './Skills'
 import Activities from './Activities'
 import Games from './Games'
 import YouTubeVideos from './YouTubeVideos'
+import InstagramPosts from './InstagramPosts'
 
 export const AboutContent = () => {
   return (
@@ -115,6 +116,17 @@ export const LinksContent = () => {
 export const WorkContent = () => {
   const softwareProjects = [
     {
+      name: "SpokenMind",
+      description: "A conversation-based reflection and habits app designed to improve users' mental wellness and productivity through AI-integrated analysis, automated task management, and social accountability.",
+      contributions: [
+        "Co-developed the core application architecture and features",
+        "Implemented AI-integrated analysis for user conversations and reflections",
+        "Built automated task management system",
+        "Developed social accountability features to help users maintain habits",
+        "Created the conversation interface for reflection and mental wellness tracking"
+      ]
+    },
+    {
       name: "MyGPT",
       description: "A fully local multimodal RAG pipeline designed for completely private, source-surfacing biomedical literature discussion and review.",
       contributions: [
@@ -156,17 +168,6 @@ export const WorkContent = () => {
       ]
     },
     {
-      name: "SpokenMind",
-      description: "A conversation-based reflection and habits app designed to improve users' mental wellness and productivity through AI-integrated analysis, automated task management, and social accountability.",
-      contributions: [
-        "Co-developed the core application architecture and features",
-        "Implemented AI-integrated analysis for user conversations and reflections",
-        "Built automated task management system",
-        "Developed social accountability features to help users maintain habits",
-        "Created the conversation interface for reflection and mental wellness tracking"
-      ]
-    },
-    {
       name: "DiagnosAI",
       description: "A generative AI tool to help clinicians improve patient outcomes by accelerating the adoption of cutting-edge medical research into hospital treatment protocols.",
       contributions: [
@@ -198,7 +199,7 @@ export const WorkContent = () => {
         <div className="space-y-4">
           {softwareProjects.map((project, idx) => (
             <div key={idx} className="bg-gray-800/30 rounded-lg p-4 border border-gray-700">
-              <h3 className="text-lg font-semibold text-white mb-2">{project.name}</h3>
+              <h3 className="text-lg font-semibold text-accent mb-2">{project.name}</h3>
               <p className="text-gray-300 text-sm mb-3">{project.description}</p>
               <div>
                 <h4 className="text-base font-semibold text-white mb-2">My Contributions:</h4>
@@ -224,11 +225,12 @@ export const WorkContent = () => {
         <h2 className="text-xl font-semibold text-white mb-4 border-b border-gray-700 pb-2">
           <span className="text-accent">Pixel</span> Art
         </h2>
-        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700">
-          <p className="text-gray-300 text-sm leading-relaxed">
-            I create pixel art for my games and personal projects. My work includes character sprites, environment assets, and animated GIFs. You can see my pixel art work on my Instagram and in my game development projects.
+        <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700 mb-4">
+          <p className="text-gray-300 text-sm leading-relaxed mb-2">
+            I create pixel art for my games and personal projects. My work includes character sprites, environment assets, and animated GIFs. Check out my <a href="https://www.instagram.com/fancydoggameart/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Instagram</a> for the latest pixel art.
           </p>
         </div>
+        <InstagramPosts />
       </div>
 
       <div>
