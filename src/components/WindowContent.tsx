@@ -55,59 +55,56 @@ export const AboutContent = () => {
 export const LinksContent = () => {
   const links = [
     {
-      name: "Art Instagram",
-      url: "https://www.instagram.com/your-art-instagram",
-      icon: "📷",
-      description: "Follow my pixel art and creative work"
+      name: "Instagram",
+      url: "https://www.instagram.com/fancydoggameart/",
+      icon: "instagram.png"
     },
     {
       name: "YouTube",
       url: "https://www.youtube.com/@RinkyDinkGamer",
-      icon: "📺",
-      description: "Watch my game development tutorials and project showcases"
+      icon: "youtube.png"
     },
     {
       name: "GitHub",
-      url: "https://github.com/your-github",
-      icon: "💻",
-      description: "View my code repositories and open source contributions"
+      url: "https://github.com/gamer805",
+      icon: "github.png"
     },
     {
       name: "itch.io",
       url: "https://fancy-dog-games.itch.io",
-      icon: "🎮",
-      description: "Play my games and check out my game development projects"
+      icon: "itchio.png"
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/your-linkedin",
-      icon: "💼",
-      description: "Connect with me professionally"
+      url: "https://www.linkedin.com/in/jude-downing-24ab93205/",
+      icon: "linkedin.png"
+    },
+    {
+      name: "Twitch",
+      url: "https://m.twitch.tv/rinkydinkgamer/home",
+      icon: "twitch.png"
     }
   ]
 
   return (
     <div className="p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {links.map((link, idx) => (
           <a
             key={idx}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700 hover:border-accent rounded-lg p-4 transition-all duration-200 hover:scale-105 group"
+            className="bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700 hover:border-accent rounded-lg p-6 transition-all duration-200 hover:scale-105 group flex flex-col items-center justify-center text-center"
           >
-            <div className="flex items-start gap-3">
-              <div className="text-3xl">{link.icon}</div>
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-accent transition-colors">
-                  {link.name}
-                </h3>
-                <p className="text-gray-300 text-xs leading-relaxed">
-                  {link.description}
-                </p>
-              </div>
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}assets/app-icons/${link.icon}`}
+              alt={link.name}
+              className="w-16 h-16 object-contain mb-3"
+            />
+            <h3 className="text-base font-semibold text-white group-hover:text-accent transition-colors">
+              {link.name}
+            </h3>
           </a>
         ))}
       </div>

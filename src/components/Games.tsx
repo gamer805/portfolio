@@ -6,7 +6,8 @@ const Games = () => {
       embedId: '711394',
       url: 'https://fancy-dog-games.itch.io/reawaken',
       slug: 'reawaken',
-      imageUrl: 'https://img.itch.zone/aW1nLzM5MzkxNDIucG5n/315x250%23c/R%2FTqT8.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzM5MzkxNDIucG5n/315x250%23c/R%2FTqT8.png',
+      description: 'Reawaken is a Legend of Zelda-inspired action-adventure game I made in Unity for the UCLA Game Lab in 2020.'
     },
     {
       id: 'tennis-wars',
@@ -14,7 +15,8 @@ const Games = () => {
       embedId: '751885',
       url: 'https://fancy-dog-games.itch.io/tennis-wars',
       slug: 'tennis-wars',
-      imageUrl: 'https://img.itch.zone/aW1nLzc4MzM3NzYucG5n/315x250%23c/7DMd4%2B.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzc4MzM3NzYucG5n/315x250%23c/7DMd4%2B.png',
+      description: 'Tennis Wars is a 2D pong-like game I adapted from an older HTML5 game I made in middle school.'
     },
     {
       id: 'slime-hunter',
@@ -22,7 +24,8 @@ const Games = () => {
       embedId: '1344152',
       url: 'https://fancy-dog-games.itch.io/slime-hunter',
       slug: 'slime-hunter',
-      imageUrl: 'https://img.itch.zone/aW1nLzc4MzM3MDQucG5n/315x250%23c/%2Fl3woO.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzc4MzM3MDQucG5n/315x250%23c/%2Fl3woO.png',
+      description: 'Slime Hunter is a top-down action game I made as my first foray into Unity3D.'
     },
     {
       id: 'furious-fowls',
@@ -30,7 +33,8 @@ const Games = () => {
       embedId: '954131',
       url: 'https://fancy-dog-games.itch.io/furious-fowls',
       slug: 'furious-fowls',
-      imageUrl: 'https://img.itch.zone/aW1nLzE3NTk1MzYxLnBuZw==/315x250%23c/kMNl%2B5.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzE3NTk1MzYxLnBuZw==/315x250%23c/kMNl%2B5.png',
+      description: 'Furious Fowls is a demake of Angry Birds I made in 2021 for a game jam.'
     },
     {
       id: 'bloobert',
@@ -38,7 +42,8 @@ const Games = () => {
       embedId: '1354623',
       url: 'https://fancy-dog-games.itch.io/bloobert',
       slug: 'bloobert',
-      imageUrl: 'https://img.itch.zone/aW1nLzc4OTE3MDYucG5n/315x250%23c/u3zhOT.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzc4OTE3MDYucG5n/315x250%23c/u3zhOT.png',
+      description: 'Bloobert is a 2D platformer I made in 2022 for Trijam #152.'
     },
     {
       id: 'duck-a-day',
@@ -46,7 +51,8 @@ const Games = () => {
       embedId: '1547650',
       url: 'https://fancy-dog-games.itch.io/duck-a-day-in-the-life',
       slug: 'duck-a-day-in-the-life',
-      imageUrl: 'https://img.itch.zone/aW1nLzkwMjkwNzAucG5n/315x250%23c/bL7mZS.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzkwMjkwNzAucG5n/315x250%23c/bL7mZS.png',
+      description: 'Duck: A Day In The Life is a mini-RPG I made in 2022 for the Bitsy Jam.'
     },
     {
       id: 'magiblade',
@@ -54,7 +60,8 @@ const Games = () => {
       embedId: '1340339',
       url: 'https://fancy-dog-games.itch.io/magiblade',
       slug: 'magiblade',
-      imageUrl: 'https://img.itch.zone/aW1nLzEwNjIxNzkyLnBuZw==/315x250%23c/Ezz91a.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzEwNjIxNzkyLnBuZw==/315x250%23c/Ezz91a.png',
+      description: "MagiBlade is a 2D action platformer I started work on in 2022."
     },
     {
       id: 'ghostly-melee',
@@ -62,7 +69,8 @@ const Games = () => {
       embedId: '1505655',
       url: 'https://fancy-dog-games.itch.io/ghostly-melee',
       slug: 'ghostly-melee',
-      imageUrl: 'https://img.itch.zone/aW1nLzg3NzY1OTgucG5n/315x250%23c/nGaCn%2F.png'
+      imageUrl: 'https://img.itch.zone/aW1nLzg3NzY1OTgucG5n/315x250%23c/nGaCn%2F.png',
+      description: "Ghostly Melee is a 2D platformer I made in 2022 for the Weekly Game Jam - Week 250."
     }
   ];
 
@@ -72,7 +80,7 @@ const Games = () => {
         {games.map((game) => (
           <div
             key={game.id}
-            className="bg-gray-800/30 rounded-xl p-4 hover:bg-gray-800/50 transition-all duration-300 border border-gray-700 hover:border-accent shadow-lg hover:shadow-accent/20"
+            className="bg-gray-800/30 rounded-xl p-4 hover:bg-gray-800/50 transition-all duration-300 border border-gray-700 shadow-lg"
           >
             <a 
               href={game.url} 
@@ -90,18 +98,7 @@ const Games = () => {
                 }}
               />
             </a>
-            <div className="w-full max-w-[552px] mx-auto">
-              <iframe
-                frameBorder="0"
-                src={`https://itch.io/embed/${game.embedId}?bg_color=1a1a1a&fg_color=ffffff&border_color=363636`}
-                width="100%"
-                height="167"
-                className="rounded-lg w-full"
-                title={game.title}
-              >
-                <a href={game.url}>{game.title} by Fancy Dog Games</a>
-              </iframe>
-            </div>
+            <p>{game.description}</p>
           </div>
         ))}
       </div>
