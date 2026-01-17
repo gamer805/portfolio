@@ -7,6 +7,24 @@ interface YouTubeVideo {
   publishedAt: string
 }
 
+// Helper function to decode HTML entities
+const decodeHtmlEntities = (text: string): string => {
+  // Create a temporary element to decode HTML entities
+  if (typeof document !== 'undefined') {
+    const textarea = document.createElement('textarea')
+    textarea.innerHTML = text
+    return textarea.value
+  }
+  // Fallback: manually decode common entities
+  return text
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ')
+}
+
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState<YouTubeVideo[]>([])
   const [loading, setLoading] = useState(true)
@@ -69,7 +87,7 @@ const YouTubeVideos = () => {
         
         const videoList: YouTubeVideo[] = videosData.items.map((item: any) => ({
           id: item.id.videoId,
-          title: item.snippet.title,
+          title: decodeHtmlEntities(item.snippet.title),
           thumbnail: item.snippet.thumbnails.medium.url,
           publishedAt: item.snippet.publishedAt
         }))

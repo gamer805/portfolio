@@ -6,6 +6,7 @@ import Activities from './Activities'
 import Games from './Games'
 import YouTubeVideos from './YouTubeVideos'
 import InstagramPosts from './InstagramPosts'
+import ImageCarousel from './ImageCarousel'
 
 export const AboutContent = () => {
   return (
@@ -114,6 +115,28 @@ export const LinksContent = () => {
 }
 
 export const WorkContent = () => {
+  // Define keyframes for each project
+  const projectKeyframes: Record<string, string[]> = {
+    "SpokenMind": [
+      "software-keyframes/spokenmind/entry.png",
+      "software-keyframes/spokenmind/home.png",
+      "software-keyframes/spokenmind/my-journal.png",
+      "software-keyframes/spokenmind/social-circle.png"
+    ],
+    "Wiillow": [
+      "software-keyframes/wiillow/costume-page.png",
+      "software-keyframes/wiillow/game-page.png",
+      "software-keyframes/wiillow/parent-page.png",
+      "software-keyframes/wiillow/talk-page.png",
+      "software-keyframes/wiillow/video-page.png"
+    ],
+    "DiagnosAI": [
+      "software-keyframes/diagnosai/diagnozai-1.png",
+      "software-keyframes/diagnosai/diagnozai-2.png",
+      "software-keyframes/diagnosai/diagnozai-3.png"
+    ]
+  }
+
   const softwareProjects = [
     {
       name: "SpokenMind",
@@ -197,20 +220,28 @@ export const WorkContent = () => {
           <span className="text-accent">Software</span> Development
         </h2>
         <div className="space-y-4">
-          {softwareProjects.map((project, idx) => (
-            <div key={idx} className="bg-gray-800/30 rounded-lg p-4 border border-gray-700">
-              <h3 className="text-lg font-semibold text-accent mb-2">{project.name}</h3>
-              <p className="text-gray-300 text-sm mb-3">{project.description}</p>
-              <div>
-                <h4 className="text-base font-semibold text-white mb-2">My Contributions:</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm ml-2">
-                  {project.contributions.map((contribution, cIdx) => (
-                    <li key={cIdx} className="leading-relaxed">{contribution}</li>
-                  ))}
-                </ul>
+          {softwareProjects.map((project, idx) => {
+            const keyframes = projectKeyframes[project.name] || []
+            const imagePaths = keyframes.map(img => `${import.meta.env.BASE_URL}${img}`)
+            
+            return (
+              <div key={idx} className="bg-gray-800/30 rounded-lg p-4 border border-gray-700">
+                <h3 className="text-lg font-semibold text-accent mb-2">{project.name}</h3>
+                <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                {imagePaths.length > 0 && (
+                  <ImageCarousel images={imagePaths} projectName={project.name} />
+                )}
+                <div className="mt-3">
+                  <h4 className="text-base font-semibold text-white mb-2">My Contributions:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm ml-2">
+                    {project.contributions.map((contribution, cIdx) => (
+                      <li key={cIdx} className="leading-relaxed">{contribution}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 
@@ -268,7 +299,7 @@ export const FAQContent = () => {
     },
     {
       question: "Do you have any game development experience?",
-      answer: "Yes! I've developed multiple games including Reawaken Demo, Tennis Wars, Slime Hunter, Furious Fowls, Bloobert, Duck: A Day In The Life, MagiBlade, and Ghostly Melee. You can check them out in the Links section."
+      answer: "Yes! I've developed multiple games including Reawaken Demo, Tennis Wars, Slime Hunter, Furious Fowls, Bloobert, Duck: A Day In The Life, MagiBlade, and Ghostly Melee. You can check them out in the Work section."
     },
     {
       question: "What projects have you worked on?",
